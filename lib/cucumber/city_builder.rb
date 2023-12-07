@@ -53,7 +53,7 @@ module Cucumber
             @namespace = YARD::CodeObjects::Cucumber::FeatureDirectory.new(@namespace,directory) {|dir| dir.add_file(directory)}
         end
 
-        if @namespace.description == "" && File.exists?("#{File.dirname(file)}/README.md")
+        if @namespace.description == "" && File.exist?("#{File.dirname(file)}/README.md")
           @namespace.description = File.read("#{File.dirname(file)}/README.md")
         end
       end
